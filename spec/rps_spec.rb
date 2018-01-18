@@ -36,6 +36,24 @@ describe RPS do
     expect(new_game.players.first).to eq 'Kalle'
   end
 
+  it {is_expected.to respond_to :player_1}
+  it {is_expected.to respond_to :player_2}
+
+  it '#player_1 returns "Player 1"' do
+    expect(subject.player_1).to eq 'Player 1'
+  end
+
+  it '#player_2 returns "Player 2"' do
+    expect(subject.player_2).to eq 'Player 2'
+  end
+
+  it {is_expected.to respond_to :choice}
+
+  it '#choice returns a valid option' do
+    expect(RPS::POSSIBLE_OPTIONS).to include subject.choice
+  end
+
+
 
 
 end
